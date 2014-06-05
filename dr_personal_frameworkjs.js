@@ -16,4 +16,7 @@ function IsArrMember(array, value) {
  return found;
 }
 
+
+//aggiunta 01
+
 //IsArrMember([6, 7, "Bordeaux"], 6);
