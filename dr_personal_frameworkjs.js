@@ -1,3 +1,13 @@
+/*
+Framework Name: DR personal framework
+Author URI: http://www.davideravasi.com
+Description: Little javascript framework with useful function for everyday job
+Framework by Davide Ravasi.
+Version: 2.0
+This frameworks is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
 // data una funzione e un array esegue azione su el
 //dipendenze: no
 function forEach(array, action) { 
@@ -6,7 +16,7 @@ function forEach(array, action) {
 }
 
 //dato array  e valore lo cerca ritornando bool
-//dipendenze forEach
+//DIPENDENZE: forEach
 function IsArrMember(array, value) {
   var found = false;
   forEach(array, function(element) {
@@ -16,7 +26,17 @@ function IsArrMember(array, value) {
  return found;
 }
 
+//dato un array e una funzione di test restituisce l'array con gli elementi che soddisfano il criterio
+// ex. filter(partial(op[">"], 5), [0, 4, 8, 12]);
+//DIPENDENZE: forEach
+function filter(test, array) {
+  var result = [];
+  forEach(array, function (element) {
+    if (test(element))
+      result.push(element);
+  });
+  return result;
+}
 
-//aggiunta 01
 
 //IsArrMember([6, 7, "Bordeaux"], 6);
