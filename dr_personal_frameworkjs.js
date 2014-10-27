@@ -15,16 +15,7 @@ function forEach(array, action) {
     action(array[i]);
 }
 
-//dato array  e valore lo cerca ritornando bool
-//DIPENDENZE: forEach
-function IsArrMember(array, value) {
-  var found = false;
-  forEach(array, function(element) {
-    if (element === value)
-      found = true;
-  });
- return found;
-}
+
 
 //dato un array e una funzione di test restituisce l'array con gli elementi che soddisfano il criterio
 // ex. filter(partial(op[">"], 5), [0, 4, 8, 12]);
