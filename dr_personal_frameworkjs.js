@@ -9,7 +9,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 // data una funzione e un array esegue azione su el
-//dipendenze: no
+//dipendenze: no //prova git
 function forEach(array, action) { 
   for (var i = 0; i < array.length; i++)
     action(array[i]);
