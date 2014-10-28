@@ -38,5 +38,16 @@ function filter(test, array) {
   return result;
 }
 
+//dato un array e una funzione di trasformazione restituisce un nuovo array con gli elementi trasformati
+//DIPENDENZE: no
+
+function map(array,transform) {
+    var mapped = [];
+    for (i = 0; i < array.length; i++) {
+        mapped.push(transform(array[i]));
+    }
+    return mapped;
+}
+
 
 //IsArrMember([6, 7, "Bordeaux"], 6);
