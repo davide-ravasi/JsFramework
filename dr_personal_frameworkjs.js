@@ -49,5 +49,15 @@ function map(array,transform) {
     return mapped;
 }
 
+//dato un array e una funzione ritorna un solo valore corrispondente all'esito della funzione passata
+//DIPENDENZE: no
+function reduce(array,combine,start) {
+    var current = start;    
+    for(i = 0; i < array.length; i++) {
+        current = combine(current,array[i]);    
+    }
+    return current;
+}
+
 
 //IsArrMember([6, 7, "Bordeaux"], 6);
