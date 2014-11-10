@@ -27,9 +27,11 @@ function IsArrMember(array, value) {
 }
 
 //dato un array e una funzione di test restituisce l'array con gli elementi che soddisfano il criterio
-// ex. filter(partial(op[">"], 5), [0, 4, 8, 12]);
+// ex. filter([3,4,6,10], function(number) {
+//     	return number>5;
+//     });
 //DIPENDENZE: forEach
-function filter(test, array) {
+function filter(array, test) {
   var result = [];
   forEach(array, function (element) {
     if (test(element))
@@ -51,6 +53,10 @@ function map(array,transform) {
 
 //dato un array e una funzione ritorna un solo valore corrispondente all'esito della funzione passata
 //DIPENDENZE: no
+//EX. reduce([1,2,3,4], function(a, b) {
+//      return a + b;
+//    }, 0)
+
 function reduce(array,combine,start) {
     var current = start;    
     for(i = 0; i < array.length; i++) {
