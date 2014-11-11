@@ -17,6 +17,7 @@ function forEach(array, action) {
 
 //dato array  e valore lo cerca ritornando bool
 //DIPENDENZE: forEach
+//IsArrMember([6, 7, "Bordeaux"], 6);
 function IsArrMember(array, value) {
   var found = false;
   forEach(array, function(element) {
@@ -42,7 +43,6 @@ function filter(array, test) {
 
 //dato un array e una funzione di trasformazione restituisce un nuovo array con gli elementi trasformati
 //DIPENDENZE: no
-
 function map(array,transform) {
     var mapped = [];
     for (i = 0; i < array.length; i++) {
@@ -56,7 +56,6 @@ function map(array,transform) {
 //EX. reduce([1,2,3,4], function(a, b) {
 //      return a + b;
 //    }, 0)
-
 function reduce(array,combine,start) {
     var current = start;    
     for(i = 0; i < array.length; i++) {
@@ -65,5 +64,19 @@ function reduce(array,combine,start) {
     return current;
 }
 
+//estende il prototype di un oggetto a quello del parente con sicurezze varie
+//DIPENDENZE: no
 
-//IsArrMember([6, 7, "Bordeaux"], 6);
+function extend(Child,Parent) {
+	var F = function() {};
+	F.prototype = Parent.prototype;
+	Child.prototype = new F();
+	Child.prototype.constructor = Child;
+	Child.uber = Parent.prototype;
+}
+
+
+
+
+
+
